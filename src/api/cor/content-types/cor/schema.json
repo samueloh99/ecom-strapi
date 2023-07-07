@@ -37,6 +37,9 @@
       "relation": "oneToMany",
       "target": "api::sku.sku",
       "mappedBy": "cor"
+    },
+    "hexadecimal": {
+      "type": "string"
     }
   }
 }

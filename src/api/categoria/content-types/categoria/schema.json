@@ -13,7 +13,9 @@
   "pluginOptions": {},
   "attributes": {
     "nome": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "validoDe": {
       "type": "datetime"
