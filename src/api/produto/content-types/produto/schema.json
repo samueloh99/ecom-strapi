@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "singularName": "produto",
+    "pluralName": "produtos",
+    "displayName": "Produto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "referencia": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "ncm": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "fornecedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::fornecedor.fornecedor",
+      "inversedBy": "produtos"
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categoria.categoria",
+      "mappedBy": "produtos"
+    },
+    "descontoValor": {
+      "type": "float"
+    },
+    "descontoDe": {
+      "type": "datetime"
+    },
+    "descontoAte": {
+      "type": "datetime"
+    },
+    "skus": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sku.sku",
+      "mappedBy": "produto"
+    },
+    "descontoTipo": {
+      "type": "enumeration",
+      "enum": [
+        "Porcentagem",
+        "Fixo"
+      ]
+    }
+  }
+}

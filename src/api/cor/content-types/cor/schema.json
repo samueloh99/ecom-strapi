@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cores",
+  "info": {
+    "singularName": "cor",
+    "pluralName": "cores",
+    "displayName": "Cor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "skus": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sku.sku",
+      "mappedBy": "cor"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skus",
+  "info": {
+    "singularName": "sku",
+    "pluralName": "skus",
+    "displayName": "Sku",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "skuReferencia": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "gtin": {
+      "type": "string"
+    },
+    "mpn": {
+      "type": "string"
+    },
+    "quantidade": {
+      "type": "integer",
+      "unique": false,
+      "required": true
+    },
+    "precoCusto": {
+      "type": "float",
+      "required": true
+    },
+    "precoVenda": {
+      "type": "float",
+      "required": true
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "produto": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::produto.produto",
+      "inversedBy": "skus"
+    },
+    "cor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cor.cor",
+      "inversedBy": "skus"
+    },
+    "tamanho": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tamanho.tamanho",
+      "inversedBy": "skus"
+    },
+    "foto1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "foto2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "foto3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "foto4": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "foto5": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "foto6": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
