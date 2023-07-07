@@ -39,7 +39,7 @@
       "mappedBy": "cor"
     },
     "hexadecimal": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
