@@ -105,6 +105,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "peso": {
+      "type": "string"
     }
   }
 }
